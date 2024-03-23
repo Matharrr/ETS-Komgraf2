@@ -1,5 +1,5 @@
 from primitif.basic import draw_bentuk
-from primitif.transformasiv2 import rotate2D, transformPoints2D, translate2D
+from primitif.transformasiv2 import rotate2D, transformPoints2D, translate2D, mirror2D
 
 
 
@@ -25,3 +25,10 @@ class bentuk_dasar:
         if y is None:
             y = self.y
         self.tm = rotate2D(alpha, x, y, self.tm)
+        
+    def mirror(self, axis, refx=None, refy=None):
+        if refx is None:
+            refx = self.x
+        if refy is None:
+            refy = self.y
+        self.tm = mirror2D(axis, refx, refy, self.tm)

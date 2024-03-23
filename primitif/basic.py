@@ -68,18 +68,22 @@ def persegi_panjang(xa, ya, panjang, lebar, c=[0,0,0,255]):
         axis=0
     )
     
-def segitiga_siku(xa, ya, sisi, c=[0,0,0,255]):
-    print(
-        primitif.line.line_dda(xa,ya,xa+sisi,ya),
-        primitif.line.line_dda(xa,ya-sisi,xa,ya),
-        primitif.line.line_dda(xa,ya-sisi,xa+sisi,ya)
-    )
+def segitiga_siku(xa, ya, alas, tinggi):
     return np.concatenate(
         (
-        py5.stroke(c[0], c[1], c[2], c[3]),
-        py5.points(primitif.line.line_dda(xa,ya,xa+sisi,ya)),
-        py5.points(primitif.line.line_dda(xa,ya-sisi,xa,ya)),
-        py5.points(primitif.line.line_dda(xa,ya-sisi,xa+sisi,ya)),
+            primitif.line.line_bresenham(xa, ya, xa+alas, ya),
+            primitif.line.line_bresenham(xa, ya, xa, ya+tinggi),
+            primitif.line.line_bresenham(xa, ya+tinggi, xa+alas, ya)
+        ),
+        axis=0
+    )
+    
+def segitiga_sama_kaki(xa, ya, alas, tinggi):
+    return np.concatenate(
+        (
+            primitif.line.line_bresenham(xa, ya, xa+alas, ya),
+            primitif.line.line_bresenham(xa, ya, xa+(alas/2), ya+tinggi),
+            primitif.line.line_bresenham(xa+(alas/2), ya+tinggi, xa+alas, ya)
         ),
         axis=0
     )

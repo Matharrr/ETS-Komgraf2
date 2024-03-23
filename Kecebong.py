@@ -1,18 +1,32 @@
 from objek.ellips import Ellips
-from objek.segitiga_siku import Segitiga_Siku
+from objek.segitiga_kaki import Segitiga_Kaki
 
 
 class Kecebong:
-    def __init__(self, x, y, tm=None):
+    def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.badan = Ellips(self.x, self.y, 20, 30)
-        self.ekor = Segitiga_Siku(self.x, self.y, 20, 30)
+        self.badan = Ellips(self.x, self.y, 18, 40)
+        self.ekor = Segitiga_Kaki(self.x-39, self.y-8, 15, 82)
+        self.mata1 = Ellips(self.x+20, self.y-10, 2, 2)
+        self.mata_luar1 = Ellips(self.x+20, self.y-10, 6, 5)
+        self.mata2 = Ellips(self.x+20, self.y+10, 2, 2)
+        self.mata_luar2 = Ellips(self.x+20, self.y+10, 6, 5)
         self.badan.rotate(90)
         self.ekor.rotate(90)
-        self.mata = Ellips(self.x+10, self.y-10, 5, 5)
+        
+    def rotate_all(self, angle):
+        self.badan.rotate(angle)
+        self.ekor.rotate(angle)
+        self.mata1.rotate(angle)
+        self.mata_luar1.rotate(angle)
+        self.mata2.rotate(angle)
+        self.mata_luar2.rotate(angle)
         
     def draw(self):
         self.badan.draw()
         self.ekor.draw()
-        self.mata.draw()
+        self.mata1.draw()
+        self.mata_luar1.draw()
+        self.mata2.draw()
+        self.mata_luar2.draw()

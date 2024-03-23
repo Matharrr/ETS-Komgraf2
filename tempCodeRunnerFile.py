@@ -1,1 +1,2 @@
-the
+
+    Katak_muda.draw()
