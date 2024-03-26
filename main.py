@@ -7,7 +7,12 @@ from metamorfosis_katak.Kecebong_Berkaki import Kecebong_Berkaki
 from metamorfosis_katak.KatakMuda import KatakMuda
 from background.ilalang import Ilalang
 from background.teratai import Teratai
+from background.awan import Awan
 
+awan1 = Awan(150, 100)
+awan2 = Awan(260, 80)
+awan3 = Awan(700, 120)
+awan4 = Awan(810, 150)
 teratai1 = Teratai(800, 300)
 teratai2 = Teratai(600, 300)
 teratai3 = Teratai(400, 300)
@@ -24,6 +29,10 @@ def setup():
 
 def draw():
     primitif.basic.draw_wavy_line(0, 300, 1000, 300, 8, 12, c=[100,149,207, 255])
+    awan1.draw()
+    awan2.draw()
+    awan3.draw()
+    awan4.draw()
     rumput.draw()
     teratai1.draw()
     teratai2.draw()
