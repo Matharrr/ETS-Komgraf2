@@ -56,14 +56,13 @@ def persegi(xa, ya, panjang, c=[0,0,0,255]):
         axis=0
     )
 
-def persegi_panjang(xa, ya, panjang, lebar, c=[0,0,0,255]):
+def persegi_panjang(xa, ya, panjang, lebar):
     return np.concatenate(
         (
-            py5.stroke(c[0], c[1], c[2], c[3]),
-            py5.points(primitif.line.line_dda(xa,ya,xa+panjang,ya)),
-            py5.points(primitif.line.line_dda(xa+panjang,ya,xa+panjang,ya+lebar)),
-            py5.points(primitif.line.line_dda(xa+panjang,ya+lebar,xa,ya+lebar)),
-            py5.points(primitif.line.line_dda(xa,ya+lebar,xa,ya)),
+            primitif.line.line_dda(xa,ya,xa+panjang,ya),
+            primitif.line.line_dda(xa+panjang,ya,xa+panjang,ya+lebar),
+            primitif.line.line_dda(xa+panjang,ya+lebar,xa,ya+lebar),
+            primitif.line.line_dda(xa,ya+lebar,xa,ya),
         ),
         axis=0
     )
