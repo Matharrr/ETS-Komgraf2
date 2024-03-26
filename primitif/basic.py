@@ -183,3 +183,17 @@ def ellips(xc, yc, Rx, Ry):
             ), axis=0)
 
     return res
+
+def draw_wavy_line(x1, y1, x2, y2, frequency, amplitude, c=[0,0,0,255]):
+    line_length = abs(x2 - x1)
+    points = []
+    for x in range(x1, x2 + 1):
+        t = (x - x1) / line_length
+        y = y1 + (y2 - y1) * t + amplitude * py5.sin(frequency * py5.TWO_PI * t)
+        points.append((x, y))
+    
+    py5.stroke(c[0], c[1], c[2], c[3])
+    for i in range(len(points) - 1):
+        x1, y1 = points[i]
+        x2, y2 = points[i + 1]
+        py5.points(primitif.line.line_dda(x1, y1, x2, y2))

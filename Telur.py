@@ -14,6 +14,7 @@ class Telur:
         self.emrbio8 = Ellips(self.x+25, self.y+8, 2, 2)
         self.emrbio9 = Ellips(self.x+7, self.y+16, 2, 2)
         self.emrbio10 = Ellips(self.x, self.y+16, 2, 2)
+        self.emrbio11 = Ellips(self.x+10, self.y+16, 2, 2)
         
         self.telur1 = Ellips(self.x, self.y, 5, 4)
         self.telur2 = Ellips(self.x+10, self.y, 5, 4)
@@ -25,6 +26,7 @@ class Telur:
         self.telur8 = Ellips(self.x+25, self.y+8, 5, 4)
         self.telur9 = Ellips(self.x+7, self.y+16, 5, 4)
         self.telur10 = Ellips(self.x, self.y+16, 5, 4)
+        self.telur11 = Ellips(self.x+10, self.y+16, 5, 4)
         
     def draw(self):
         self.emrbio1.draw()
@@ -37,6 +39,7 @@ class Telur:
         self.emrbio8.draw()
         self.emrbio9.draw()
         self.emrbio10.draw()
+        self.emrbio11.draw()
         
         self.telur1.draw()
         self.telur2.draw()
@@ -48,3 +51,4 @@ class Telur:
         self.telur8.draw()
         self.telur9.draw()
         self.telur10.draw()
+        self.telur11.draw()
