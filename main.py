@@ -1,10 +1,10 @@
 import py5
 import primitif.basic
-from KatakDewasa import KatakDewasa
-from Kecebong import Kecebong
-from Telur import Telur
-from Kecebong_Berkaki import Kecebong_Berkaki
-from KatakMuda import KatakMuda
+from metamorfosis_katak.KatakDewasa import KatakDewasa
+from metamorfosis_katak.Kecebong import Kecebong
+from metamorfosis_katak.Telur import Telur
+from metamorfosis_katak.Kecebong_Berkaki import Kecebong_Berkaki
+from metamorfosis_katak.KatakMuda import KatakMuda
 from background.ilalang import Ilalang
 from background.teratai import Teratai
 
