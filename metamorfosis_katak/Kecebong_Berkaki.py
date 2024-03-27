@@ -28,11 +28,7 @@ class Kecebong_Berkaki:
         self.jari_kiri_kaki1.rotate(130)
         self.jari_kiri_kaki2 = Segitiga_Kaki(self.x-35, self.y-35, 9, 15)
         self.jari_kiri_kaki2.rotate(90)
-        self.jari_kiri_kaki3 = Segitiga_Kaki(self.x-35, self.y-31, 8, 10)
-        self.jari_kiri_kaki3.rotate(50)
-        
-        self.jari_kanan_kaki1 = Segitiga_Kaki(self.x-35, self.y+31, 8, 10)
-        self.jari_kanan_kaki1.rotate(50)
+
         self.jari_kanan_kaki2 = Segitiga_Kaki(self.x-35, self.y+29, 9, 15)
         self.jari_kanan_kaki2.rotate(90)
         self.jari_kanan_kaki3 = Segitiga_Kaki(self.x-35, self.y+25, 8, 10)
@@ -51,7 +47,23 @@ class Kecebong_Berkaki:
         self.kaki2.draw()
         self.jari_kiri_kaki1.draw()
         self.jari_kiri_kaki2.draw()
-        self.jari_kiri_kaki3.draw()
-        self.jari_kanan_kaki1.draw()
         self.jari_kanan_kaki2.draw()
         self.jari_kanan_kaki3.draw()
+        
+    def move(self, dx, dy):
+        self.x += dx
+        self.y += dy
+        self.badan.move(dx*-0.28, dy*4.55)
+        self.ekor.move(dx*-0.28, dy*4.55)
+        self.mata1.move(dx*1.14, dy*1.14)
+        self.mata_luar1.move(dx*1.14, dy*1.14)
+        self.mata2.move(dx*1.14, dy*1.14)
+        self.mata_luar2.move(dx*1.14, dy*1.14)
+        self.paha_kaki1.move(dx*-1.14, dy*1.1)
+        self.kaki1.move(dx*0.48, dy*-4.25)
+        self.paha_kaki2.move(dx*-1.14, dy*-1.1)
+        self.kaki2.move(dx*-0.07, dy*-4.6)
+        self.jari_kiri_kaki1.move(dx*-0.9, dy*2.75)
+        self.jari_kiri_kaki2.move(dx*-0.25, dy*4.3)
+        self.jari_kanan_kaki2.move(dx*-0.25, dy*4.3)
+        self.jari_kanan_kaki3.move(dx*-0.9, dy*2.75)

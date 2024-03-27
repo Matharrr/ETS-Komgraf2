@@ -1,6 +1,8 @@
 import numpy as np
 import math
 
+def parabola(a, b, c, x):
+    return a * x * x + b * x + c
 
 def translate2D(tx, ty, tm=None):
     translation_matrix = np.array([

@@ -15,7 +15,7 @@ class bentuk_dasar:
         )
         
     def move(self, dx, dy):
-        self.tm = translate2D(dx, dy)
+        self.tm = translate2D(dx, dy, self.tm)
         
     def rotate(self, alpha, x=None, y=None):
         if alpha is None or alpha == 0:
@@ -32,3 +32,7 @@ class bentuk_dasar:
         if refy is None:
             refy = self.y
         self.tm = mirror2D(axis, refx, refy, self.tm)
+        
+    def lompat_parabola(self, a, b, c, x):
+        y = a*x**2 + b*x + c
+        self.move(x, y)

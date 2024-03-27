@@ -12,3 +12,9 @@ class Telur:
         self.emrbio1.draw()
         
         self.telur1.draw()
+        
+    def move(self, dx, dy):
+        self.x += dx
+        self.y += dy
+        self.emrbio1.move(-dx, dy)
+        self.telur1.move(-dx, dy)

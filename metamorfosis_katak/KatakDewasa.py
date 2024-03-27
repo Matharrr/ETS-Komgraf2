@@ -4,6 +4,7 @@ from objek.persegi_panjang import Persegi_Panjang
 from objek.segitiga_siku import Segitiga_Siku
 
 
+
 class KatakDewasa:
     def __init__(self, x, y, tm=None):
         self.x = x
@@ -28,6 +29,7 @@ class KatakDewasa:
         self.mulut = Segitiga_Siku(self.x+52, self.y-8, 25, 7)
         self.mulut.mirror("y")
         
+        
     def draw(self):
         self.badan.draw()
         self.paha_kaki.draw()
@@ -42,3 +44,22 @@ class KatakDewasa:
         self.pupil.draw()
         
         self.mulut.draw()
+
+    def move(self, dx, dy):
+        self.x += dx
+        self.y += dy
+        self.badan.move(dx*0, dy)
+        self.paha_kaki.move(dy, dx*0)
+        self.lutut.move(dx*0, dy)
+        self.betis_kaki.move(dy, dx*0)
+        
+        self.lengan_atas.move(dx*0, dy)
+        self.siku.move(dx*0, dy)
+        self.lengan_bawah.move(dy, dx*0)
+        
+        self.mata.move(dx*0, dy)
+        self.pupil.move(dx*0, dy)
+        
+        self.mulut.move(dx*0, dy)
+        
+    is_jumping = False

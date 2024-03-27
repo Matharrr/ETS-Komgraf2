@@ -30,3 +30,13 @@ class Kecebong:
         self.mata_luar1.draw()
         self.mata2.draw()
         self.mata_luar2.draw()
+        
+    def move(self, dx, dy):
+        self.x += dx
+        self.y += dy
+        self.badan.move(dx*0.28, dy*-4.55)
+        self.ekor.move(dx*0.28, dy*-4.55)
+        self.mata1.move(dx*1.14, dy*1.14)
+        self.mata_luar1.move(dx*1.14, dy*1.14)
+        self.mata2.move(dx*1.14, dy*1.14)
+        self.mata_luar2.move(dx*1.14, dy*1.14)
